@@ -1,0 +1,592 @@
+[gd_scene load_steps=26 format=3 uid="uid://ln85llv8md7"]
+
+[ext_resource type="Script" path="res://scenes/game/ui/main_menu/main_menu.gd" id="1_g1i31"]
+[ext_resource type="AudioStream" uid="uid://btstmivulu2by" path="res://assets/sounds/pirate_game_tune.ogg" id="2_gcb8x"]
+[ext_resource type="Texture2D" uid="uid://bko3ldeuk0nmq" path="res://APOCALYPSE Assets/Background/Fondo/bg01.png" id="3_to4kk"]
+[ext_resource type="PackedScene" uid="uid://ca3ueo0yewjov" path="res://scenes/game/characters/main_character/main_character.tscn" id="11_4tiyj"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://press_Sstart_2p/PressStart2P-Regular.ttf" id="27_eb3si"]
+[ext_resource type="Texture2D" uid="uid://c1565oiq4iveu" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/13.png" id="28_2um5v"]
+[ext_resource type="Texture2D" uid="uid://b0x5mxa2tsy1u" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/14.png" id="29_qsbm4"]
+[ext_resource type="Texture2D" uid="uid://c8ashne3hoseq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/15.png" id="30_qlj7f"]
+[ext_resource type="Texture2D" uid="uid://bqcbpn2cey2eg" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/16.png" id="31_76hrj"]
+[ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="32_sxqtv"]
+[ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="33_14dux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h43hp"]
+size = Vector2(364, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qhag"]
+size = Vector2(14.5, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rab7k"]
+size = Vector2(6, 148)
+
+[sub_resource type="Theme" id="Theme_pnwr5"]
+default_font = ExtResource("27_eb3si")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_psv2g"]
+
+[sub_resource type="Theme" id="Theme_ejxkt"]
+default_base_scale = 0.08
+default_font = ExtResource("27_eb3si")
+default_font_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81xxs"]
+border_color = Color(0.564706, 0.8, 0.529412, 0.854902)
+shadow_color = Color(0, 0.827451, 0, 0.6)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d18gj"]
+load_path = "res://.godot/imported/small_cloud_1.png-40532304be8a8e58b358963bfcb15f67.ctex"
+
+[sub_resource type="Animation" id="Animation_ownx8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxLayer1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jgm7b"]
+resource_name = "parallax1"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxLayer1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-300, 0), Vector2(200, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khdo0"]
+_data = {
+"RESET": SubResource("Animation_ownx8"),
+"parallax1": SubResource("Animation_jgm7b")
+}
+
+[sub_resource type="Animation" id="Animation_xasse"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxLayer3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cx42v"]
+resource_name = "parallax1"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxLayer3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(200, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyuae"]
+_data = {
+"RESET": SubResource("Animation_xasse"),
+"parallax1": SubResource("Animation_cx42v")
+}
+
+[node name="MainMenu" type="Node2D"]
+z_index = 10
+script = ExtResource("1_g1i31")
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="AmbientSound" type="AudioStreamPlayer" parent="Main"]
+stream = ExtResource("2_gcb8x")
+autoplay = true
+bus = &"Ambient"
+
+[node name="World" type="Node2D" parent="Main"]
+
+[node name="Background" type="Node2D" parent="Main/World"]
+
+[node name="Bg" type="Sprite2D" parent="Main/World/Background"]
+position = Vector2(560.828, 314)
+scale = Vector2(1.65779, 3.87209)
+texture = ExtResource("3_to4kk")
+
+[node name="Ship" type="Node2D" parent="Main/World"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Main/World/Ship"]
+position = Vector2(43, 579)
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/World/Ship/StaticBody2D"]
+position = Vector2(497, -127)
+shape = SubResource("RectangleShape2D_h43hp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Main/World/Ship"]
+position = Vector2(43, 579)
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/World/Ship/StaticBody2D2"]
+position = Vector2(326, -182)
+shape = SubResource("RectangleShape2D_5qhag")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Main/World/Ship"]
+position = Vector2(43, 579)
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/World/Ship/StaticBody2D3"]
+position = Vector2(679, -182)
+shape = SubResource("RectangleShape2D_rab7k")
+
+[node name="MainCharacter" parent="Main/World/Ship" instance=ExtResource("11_4tiyj")]
+position = Vector2(570, 393)
+scale = Vector2(5, 5)
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Main"]
+offset = Vector2(-235, 0)
+transform = Transform2D(1, 0, 0, 1, -235, 0)
+
+[node name="Options" type="Control" parent="Main/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -61.0
+offset_right = 49.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Init" type="Control" parent="Main/CanvasLayer/Options"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -170.0
+offset_right = -400.0
+offset_bottom = -130.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Inicio" type="Label" parent="Main/CanvasLayer/Options/Init"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -15.5
+offset_right = 248.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pnwr5")
+theme_override_colors/font_color = Color(0.862745, 0.270588, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0.615686, 0.764706, 0.486275, 1)
+theme_override_colors/font_outline_color = Color(0.192157, 0.133333, 0.0745098, 1)
+theme_override_font_sizes/font_size = 31
+text = "APOCALYPSIS GAME"
+
+[node name="Button" type="Control" parent="Main/CanvasLayer/Options/Init"]
+anchors_preset = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 90.0
+
+[node name="Button" type="Button" parent="Main/CanvasLayer/Options/Init/Button"]
+material = SubResource("CanvasItemMaterial_psv2g")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = 380.0
+offset_right = 137.0
+offset_bottom = 406.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ejxkt")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+theme_override_styles/hover = SubResource("StyleBoxFlat_81xxs")
+text = "COMENZAR EL JUEGO"
+flat = true
+icon_alignment = 1
+
+[node name="Controls" type="Control" parent="Main/CanvasLayer/Options"]
+anchors_preset = 0
+offset_left = -400.0
+offset_top = 280.0
+offset_right = -360.0
+offset_bottom = 320.0
+
+[node name="ShowControls" type="Button" parent="Main/CanvasLayer/Options/Controls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -80.0
+offset_right = 122.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 24
+text = "Controles"
+
+[node name="GameControls" type="CanvasLayer" parent="Main"]
+visible = false
+
+[node name="Background" type="ColorRect" parent="Main/GameControls"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.215686, 0.176471, 0.0705882, 0.917647)
+
+[node name="Background" type="Control" parent="Main/GameControls/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopLeft" type="TextureRect" parent="Main/GameControls/Background/Background"]
+modulate = Color(0.741176, 0.752941, 0.756863, 1)
+layout_mode = 0
+offset_left = -450.0
+offset_top = -330.0
+offset_bottom = -180.0
+texture = ExtResource("28_2um5v")
+
+[node name="TopRight" type="TextureRect" parent="Main/GameControls/Background/Background"]
+modulate = Color(0.741176, 0.752941, 0.756863, 1)
+layout_mode = 0
+offset_top = -330.0
+offset_right = 500.0
+offset_bottom = -180.0
+texture = ExtResource("29_qsbm4")
+
+[node name="MiddleLeft" type="TextureRect" parent="Main/GameControls/Background/Background"]
+modulate = Color(0.741176, 0.752941, 0.756863, 1)
+layout_mode = 0
+offset_left = -450.0
+offset_top = -180.0
+offset_bottom = 260.0
+texture = ExtResource("30_qlj7f")
+
+[node name="MiddleRight" type="TextureRect" parent="Main/GameControls/Background/Background"]
+modulate = Color(0.741176, 0.752941, 0.756863, 1)
+layout_mode = 0
+offset_top = -180.0
+offset_right = 500.0
+offset_bottom = 260.0
+texture = ExtResource("31_76hrj")
+
+[node name="BottomLeft" type="TextureRect" parent="Main/GameControls/Background/Background"]
+modulate = Color(0.741176, 0.752941, 0.756863, 1)
+layout_mode = 0
+offset_left = -450.0
+offset_top = 250.0
+offset_bottom = 400.0
+texture = ExtResource("32_sxqtv")
+
+[node name="BottomRight" type="TextureRect" parent="Main/GameControls/Background/Background"]
+modulate = Color(0.741176, 0.752941, 0.756863, 1)
+layout_mode = 0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 400.0
+texture = ExtResource("33_14dux")
+
+[node name="Texts" type="Control" parent="Main/GameControls/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -120.0
+offset_right = 20.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Control" parent="Main/GameControls/Background/Texts"]
+anchors_preset = 0
+offset_top = -80.0
+offset_right = 40.0
+offset_bottom = -40.0
+
+[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -26.5
+offset_right = 225.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 50
+text = "Controles"
+
+[node name="Row1" type="Control" parent="Main/GameControls/Background/Texts"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row1"]
+layout_mode = 0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 22
+text = "Movimiento:"
+
+[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row1"]
+layout_mode = 0
+offset_left = -50.0
+offset_right = 490.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 20
+text = "Flechas ← y → "
+
+[node name="Row2" type="Control" parent="Main/GameControls/Background/Texts"]
+anchors_preset = 0
+offset_top = 60.0
+offset_right = 40.0
+offset_bottom = 100.0
+
+[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row2"]
+layout_mode = 0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 22
+text = "Salto:"
+
+[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row2"]
+layout_mode = 0
+offset_left = -50.0
+offset_right = 490.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 20
+text = "Espacio"
+
+[node name="Row3" type="Control" parent="Main/GameControls/Background/Texts"]
+anchors_preset = 0
+offset_top = 120.0
+offset_right = 40.0
+offset_bottom = 160.0
+
+[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row3"]
+layout_mode = 0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 22
+text = "Ataque:"
+
+[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row3"]
+layout_mode = 0
+offset_left = -50.0
+offset_right = 490.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 20
+text = "Tecla X"
+
+[node name="Row4" type="Control" parent="Main/GameControls/Background/Texts"]
+anchors_preset = 0
+offset_top = 180.0
+offset_right = 40.0
+offset_bottom = 220.0
+
+[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row4"]
+layout_mode = 0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 22
+text = "Mercado:"
+
+[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row4"]
+layout_mode = 0
+offset_left = -50.0
+offset_right = 490.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 20
+text = "Tecla M"
+
+[node name="Row5" type="Control" parent="Main/GameControls/Background/Texts"]
+anchors_preset = 0
+offset_top = 240.0
+offset_right = 40.0
+offset_bottom = 280.0
+
+[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row5"]
+layout_mode = 0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 22
+text = "Iventario:"
+
+[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row5"]
+layout_mode = 0
+offset_left = -50.0
+offset_right = 490.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 20
+text = "Rueda del ratón"
+
+[node name="Row6" type="Control" parent="Main/GameControls/Background/Texts"]
+anchors_preset = 0
+offset_top = 300.0
+offset_right = 40.0
+offset_bottom = 340.0
+
+[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row6"]
+layout_mode = 0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 22
+text = "Menú:"
+
+[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row6"]
+layout_mode = 0
+offset_left = -50.0
+offset_right = 490.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("27_eb3si")
+theme_override_font_sizes/font_size = 20
+text = "Escape"
+
+[node name="Close" type="Control" parent="Main/GameControls/Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="CloseControls" type="Button" parent="Main/GameControls/Background/Close"]
+layout_mode = 0
+offset_left = -30.0
+offset_right = 40.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+flat = true
+
+[node name="Camera2D" type="Camera2D" parent="Main"]
+position = Vector2(579, 325)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Main"]
+layer = 0
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="Main/ParallaxBackground"]
+position = Vector2(500, 0)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Cloud4" type="Sprite2D" parent="Main/ParallaxBackground/ParallaxLayer1"]
+position = Vector2(1211, 123.004)
+scale = Vector2(4, 2.667)
+texture = SubResource("CompressedTexture2D_d18gj")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Main/ParallaxBackground"]
+position = Vector2(400, 0)
+scale = Vector2(0.7, 0.7)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Cloud" type="Sprite2D" parent="Main/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(249, 200)
+scale = Vector2(4, 4.324)
+
+[node name="Cloud2" type="Sprite2D" parent="Main/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(725, 303)
+scale = Vector2(4, 4.324)
+
+[node name="Parallax1" type="AnimationPlayer" parent="Main/ParallaxBackground"]
+libraries = {
+"": SubResource("AnimationLibrary_khdo0")
+}
+
+[node name="Parallax2" type="AnimationPlayer" parent="Main/ParallaxBackground"]
+libraries = {
+"": SubResource("AnimationLibrary_hyuae")
+}
+speed_scale = 0.5
+
+[connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Main/CanvasLayer/Options/Controls/ShowControls" to="." method="_on_show_controls_pressed"]
+[connection signal="pressed" from="Main/GameControls/Background/Close/CloseControls" to="." method="_on_close_controls_pressed"]
+[connection signal="animation_finished" from="Main/ParallaxBackground/Parallax1" to="." method="_on_parallax_1_animation_finished"]
+[connection signal="animation_finished" from="Main/ParallaxBackground/Parallax2" to="." method="_on_parallax_2_animation_finished"]

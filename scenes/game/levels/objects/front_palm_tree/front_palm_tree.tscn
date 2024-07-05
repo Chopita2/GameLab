@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2nps502udtd6"]
+
+[ext_resource type="Texture2D" uid="uid://1sfy8lne0nka" path="res://Pack 01 (Pixel Art)/PNG/Machine 1.png" id="1_cwy38"]
+[ext_resource type="Script" path="res://scenes/game/levels/objects/front_palm_tree/front_palm_tree.gd" id="5_kc2f4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8vj6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cwy38")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 8.0
+}]
+
+[node name="FrontPalmTree" type="AnimatedSprite2D"]
+position = Vector2(623, 432)
+sprite_frames = SubResource("SpriteFrames_p8vj6")
+animation = &"idle_front"
+frame_progress = 0.626995
+script = ExtResource("5_kc2f4")

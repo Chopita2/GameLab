@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://45xhpe3kwybx"
+path="res://.godot/imported/03 - Perish Lane ( level, mood, menu ).ogg-a8ed1d627d2ad5130b836a87c4b7e36e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Apocalypse Sounds/03 - Perish Lane ( level, mood, menu ).ogg"
+dest_files=["res://.godot/imported/03 - Perish Lane ( level, mood, menu ).ogg-a8ed1d627d2ad5130b836a87c4b7e36e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

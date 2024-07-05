@@ -1,0 +1,122 @@
+[gd_scene load_steps=19 format=3 uid="uid://bnp6y3fe4kqob"]
+
+[ext_resource type="Script" path="res://scenes/game/levels/objects/damage_object/cannon/cannon.gd" id="1_t2rj5"]
+[ext_resource type="Texture2D" uid="uid://0iwim2rucap0" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Walk 1.png" id="2_fhc4q"]
+[ext_resource type="Texture2D" uid="uid://dfa5qy6ino0vl" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Walk 2.png" id="3_p85pt"]
+[ext_resource type="Texture2D" uid="uid://2hgq47odlk3i" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Walk 3.png" id="4_3kq4u"]
+[ext_resource type="Texture2D" uid="uid://cbwn35ajmy7o" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Walk 4.png" id="5_fppvm"]
+[ext_resource type="Texture2D" uid="uid://dmggi5dn13mtb" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Idle 1.png" id="6_pviq3"]
+[ext_resource type="Texture2D" uid="uid://cjk687ks7tfmd" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Idle 2.png" id="7_nh6kg"]
+[ext_resource type="Texture2D" uid="uid://cnsdnylpauj1n" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Idle 3.png" id="8_7y2ed"]
+[ext_resource type="Texture2D" uid="uid://bbfj1y4ne7hop" path="res://APOCALYPSE Assets/Enemigos/1 Drones/1/Idle 4.png" id="9_hlmxo"]
+[ext_resource type="Texture2D" uid="uid://b6r22txxtcslw" path="res://assets/sprites/treasure_hunters/shooter_traps/sprites/cannon/cannon_fire_effect/1.png" id="13_id8tl"]
+[ext_resource type="Texture2D" uid="uid://bajc02rl7qd6" path="res://assets/sprites/treasure_hunters/shooter_traps/sprites/cannon/cannon_fire_effect/2.png" id="14_2jbrr"]
+[ext_resource type="Texture2D" uid="uid://cspsvvvqdblxt" path="res://assets/sprites/treasure_hunters/shooter_traps/sprites/cannon/cannon_fire_effect/3.png" id="15_iimgy"]
+[ext_resource type="Texture2D" uid="uid://cj10crvyo2oif" path="res://assets/sprites/treasure_hunters/shooter_traps/sprites/cannon/cannon_fire_effect/4.png" id="16_sds8d"]
+[ext_resource type="Texture2D" uid="uid://bpfdf0fm10aws" path="res://assets/sprites/treasure_hunters/shooter_traps/sprites/cannon/cannon_fire_effect/5.png" id="17_q4b5x"]
+[ext_resource type="Texture2D" uid="uid://bkd4sw67xn25y" path="res://assets/sprites/treasure_hunters/shooter_traps/sprites/cannon/cannon_fire_effect/6.png" id="18_ben6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktbri"]
+size = Vector2(28, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h5nvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fhc4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p85pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3kq4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fppvm")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fhc4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p85pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3kq4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fppvm")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pviq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nh6kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7y2ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hlmxo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmb21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_id8tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2jbrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_iimgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sds8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q4b5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ben6w")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"fire_effect",
+"speed": 5.0
+}]
+
+[node name="Cannon" type="RigidBody2D" groups=["cannon"]]
+script = ExtResource("1_t2rj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ktbri")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h5nvd")
+animation = &"idle"
+
+[node name="AnimatedSprite2DEffects" type="AnimatedSprite2D" parent="."]
+position = Vector2(-25, -1)
+sprite_frames = SubResource("SpriteFrames_tmb21")
+animation = &"fire_effect"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

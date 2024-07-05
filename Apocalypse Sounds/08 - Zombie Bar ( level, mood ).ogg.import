@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmi0jhw1x3uoa"
+path="res://.godot/imported/08 - Zombie Bar ( level, mood ).ogg-cb869b7f37cfb4a2411f95a5c0a8d661.oggvorbisstr"
+
+[deps]
+
+source_file="res://Apocalypse Sounds/08 - Zombie Bar ( level, mood ).ogg"
+dest_files=["res://.godot/imported/08 - Zombie Bar ( level, mood ).ogg-cb869b7f37cfb4a2411f95a5c0a8d661.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

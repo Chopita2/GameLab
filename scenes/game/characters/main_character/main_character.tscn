@@ -1,0 +1,490 @@
+[gd_scene load_steps=70 format=3 uid="uid://ca3ueo0yewjov"]
+
+[ext_resource type="Script" path="res://scenes/game/characters/main_character/MainCharacterBomb.gd" id="3_odvu6"]
+[ext_resource type="Texture2D" uid="uid://dmuksbudijvwb" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__000.png" id="4_g3xoa"]
+[ext_resource type="Texture2D" uid="uid://s8uiu8vtgelu" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__001.png" id="5_2vch8"]
+[ext_resource type="Texture2D" uid="uid://db3ilciaygl0s" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__002.png" id="6_ekufy"]
+[ext_resource type="Texture2D" uid="uid://b4q0o72sf87tg" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__003.png" id="7_bs25q"]
+[ext_resource type="Script" path="res://scenes/game/characters/main_character/main_character_movement.gd" id="7_fm4k8"]
+[ext_resource type="Texture2D" uid="uid://bf54qt2iotfl3" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__004.png" id="8_dmfvg"]
+[ext_resource type="Texture2D" uid="uid://mto5pnbbpfe8" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__005.png" id="9_q4vu8"]
+[ext_resource type="Texture2D" uid="uid://diuerkv0n2f4d" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/captain_clown_nose/sword_effects/25-attack_2/attack_2_01.png" id="10_1aidl"]
+[ext_resource type="Texture2D" uid="uid://v3cbh15iy0wc" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__006.png" id="10_wy7vq"]
+[ext_resource type="Texture2D" uid="uid://br6g4pr0o4p56" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__007.png" id="11_ari6g"]
+[ext_resource type="Texture2D" uid="uid://b107itpfhsblm" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/captain_clown_nose/sword_effects/25-attack_2/attack_2_02.png" id="11_qm4vv"]
+[ext_resource type="Texture2D" uid="uid://demcoru1jlhyd" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__008.png" id="12_dif0s"]
+[ext_resource type="Texture2D" uid="uid://bbcsy2nv17cpl" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/captain_clown_nose/sword_effects/25-attack_2/attack_2_03.png" id="12_wjmjd"]
+[ext_resource type="Texture2D" uid="uid://c8m8uhkpbw7qn" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__000.png" id="13_k52dx"]
+[ext_resource type="Texture2D" uid="uid://bgj3vnoww4a1k" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__001.png" id="14_p1xeb"]
+[ext_resource type="Texture2D" uid="uid://dsom1mf5xx2ig" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__002.png" id="15_rb3rc"]
+[ext_resource type="Texture2D" uid="uid://cw0lbcrnhkro2" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__003.png" id="16_dsawt"]
+[ext_resource type="Texture2D" uid="uid://cydewkwwurnp7" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__004.png" id="17_4lgcg"]
+[ext_resource type="Texture2D" uid="uid://cgv4wyg333eeh" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__005.png" id="18_4ohro"]
+[ext_resource type="Texture2D" uid="uid://dmkaoi00jjptw" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__006.png" id="19_nyrwr"]
+[ext_resource type="Texture2D" uid="uid://00j1jmkadyix" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__007.png" id="20_etqpm"]
+[ext_resource type="Texture2D" uid="uid://d13b5mfgftchs" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__008.png" id="21_trbml"]
+[ext_resource type="Texture2D" uid="uid://cplbtt04bjpso" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump_Attack__009.png" id="22_p277m"]
+[ext_resource type="Texture2D" uid="uid://dxbqp5yshasis" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__000.png" id="23_ofogf"]
+[ext_resource type="Texture2D" uid="uid://cxdguperqhhm3" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__001.png" id="24_1r31y"]
+[ext_resource type="Texture2D" uid="uid://df3lkjm2ixyay" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__002.png" id="25_dgfho"]
+[ext_resource type="Texture2D" uid="uid://djgv1t05o0vke" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__003.png" id="26_r6qq4"]
+[ext_resource type="Texture2D" uid="uid://lssfxh6njln3" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__004.png" id="27_1xxd7"]
+[ext_resource type="Texture2D" uid="uid://b613a4a43p4p7" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__005.png" id="28_kldvu"]
+[ext_resource type="Texture2D" uid="uid://dxp8elugnivjk" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__006.png" id="29_sm0em"]
+[ext_resource type="Texture2D" uid="uid://gb17b6c62xch" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__007.png" id="30_wl200"]
+[ext_resource type="Texture2D" uid="uid://dcjf5wfewqeac" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__008.png" id="31_xn4kp"]
+[ext_resource type="Texture2D" uid="uid://cx6ugwapvphxt" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Dead__009.png" id="32_hv7h4"]
+[ext_resource type="Texture2D" uid="uid://dege64iygjau0" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__000.png" id="33_chsbb"]
+[ext_resource type="Texture2D" uid="uid://cxoetqf7cy4fr" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__001.png" id="34_vxp0u"]
+[ext_resource type="Texture2D" uid="uid://pluaqte0afn1" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__002.png" id="35_1blsi"]
+[ext_resource type="Texture2D" uid="uid://dk7vlsxtdh1jl" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__003.png" id="36_s503d"]
+[ext_resource type="Texture2D" uid="uid://bxtdmt1crgo1h" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__004.png" id="37_y2f05"]
+[ext_resource type="Texture2D" uid="uid://c5my10nldf4ht" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__005.png" id="38_xjdn1"]
+[ext_resource type="Texture2D" uid="uid://df4bflwu726y7" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__006.png" id="39_hafy4"]
+[ext_resource type="Texture2D" uid="uid://b4asf3uwn8wbg" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__007.png" id="40_iudtc"]
+[ext_resource type="Texture2D" uid="uid://bfnk8vdyjxsjl" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__008.png" id="41_nv21u"]
+[ext_resource type="Texture2D" uid="uid://u1c3kige6ouh" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Idle__009.png" id="42_n5ete"]
+[ext_resource type="Texture2D" uid="uid://bgwyk5jeauuue" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Attack__009.png" id="46_8pxpp"]
+[ext_resource type="Texture2D" uid="uid://2d5xo110568h" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__000.png" id="55_3dt0n"]
+[ext_resource type="Texture2D" uid="uid://cjna6cy5xptra" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__001.png" id="56_hsll3"]
+[ext_resource type="Texture2D" uid="uid://bam761vc1qwdf" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__002.png" id="57_3r0d4"]
+[ext_resource type="Script" path="res://scenes/game/characters/main_character/main_character_collision.gd" id="57_7h47x"]
+[ext_resource type="Texture2D" uid="uid://cm63fnw4dtswx" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__003.png" id="58_jiity"]
+[ext_resource type="Texture2D" uid="uid://dg0biocrdew8e" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__004.png" id="59_ctbnw"]
+[ext_resource type="Texture2D" uid="uid://cf6r360j083di" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__005.png" id="60_tjo1p"]
+[ext_resource type="Texture2D" uid="uid://dliylqueo1j58" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__006.png" id="61_cwggd"]
+[ext_resource type="Texture2D" uid="uid://5xjn3hr8h2r7" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__007.png" id="62_hfj20"]
+[ext_resource type="Texture2D" uid="uid://cllwvakvxvosg" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__008.png" id="63_mna28"]
+[ext_resource type="Texture2D" uid="uid://p5l633mdcgop" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Jump__009.png" id="64_2rc6e"]
+[ext_resource type="Texture2D" uid="uid://bac4htf5tq41b" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__000.png" id="65_re5k0"]
+[ext_resource type="Texture2D" uid="uid://r0oc07nus24l" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__001.png" id="66_m22e0"]
+[ext_resource type="Texture2D" uid="uid://bb36grgaowop" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__003.png" id="67_53wnk"]
+[ext_resource type="Texture2D" uid="uid://bh0vs5ssekxj5" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__004.png" id="68_12juc"]
+[ext_resource type="Texture2D" uid="uid://da8uyhjrm5vwf" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__009.png" id="69_a4bai"]
+[ext_resource type="Texture2D" uid="uid://dk2udwvtl74wg" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__005.png" id="70_sjmqf"]
+[ext_resource type="Texture2D" uid="uid://d3m3tmaybvreo" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__006.png" id="71_bcelw"]
+[ext_resource type="Texture2D" uid="uid://r36rug1qphan" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__008.png" id="72_8slwd"]
+[ext_resource type="Texture2D" uid="uid://d3on8nrd1twd8" path="res://APOCALYPSE Assets/Personaje/Hombre/png/Run__007.png" id="73_tp1xa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sohxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g3xoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2vch8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ekufy")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bs25q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dmfvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q4vu8")
+}],
+"loop": false,
+"name": &"attack_2",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_wy7vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ari6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dif0s")
+}],
+"loop": false,
+"name": &"attack_3",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_k52dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_p1xeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rb3rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dsawt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4lgcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4ohro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nyrwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_etqpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_trbml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_p277m")
+}],
+"loop": false,
+"name": &"attack_air_1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_ofogf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1r31y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_dgfho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_r6qq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1xxd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_kldvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sm0em")
+}],
+"loop": false,
+"name": &"dead_ground",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_wl200")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xn4kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_hv7h4")
+}],
+"loop": false,
+"name": &"dead_hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_chsbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vxp0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1blsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_s503d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_y2f05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_xjdn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hafy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_iudtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_nv21u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_n5ete")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_hfj20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_mna28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_2rc6e")
+}],
+"loop": true,
+"name": &"fall_with_sword",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_chsbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vxp0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1blsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_s503d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_y2f05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_xjdn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hafy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_iudtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_nv21u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_n5ete")
+}],
+"loop": true,
+"name": &"ground_with_sword",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g3xoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2vch8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ekufy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bs25q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dmfvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q4vu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wy7vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ari6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dif0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8pxpp")
+}],
+"loop": false,
+"name": &"hit_with_sword",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_chsbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vxp0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1blsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_s503d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_y2f05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_xjdn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_n5ete")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hafy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_nv21u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_iudtc")
+}],
+"loop": true,
+"name": &"idle_with_sword",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_3dt0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_hsll3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_3r0d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_jiity")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ctbnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_tjo1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_cwggd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_hfj20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_mna28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_2rc6e")
+}],
+"loop": true,
+"name": &"jump_with_sword",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_re5k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_m22e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_53wnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_12juc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_a4bai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_sjmqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_bcelw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_8slwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_tp1xa")
+}],
+"loop": true,
+"name": &"run_with_sword",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q04ya"]
+size = Vector2(18, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isfec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1aidl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qm4vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wjmjd")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"attack_2_effect",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_841yf"]
+size = Vector2(20, 34.5)
+
+[node name="MainCharacter" type="CharacterBody2D" groups=["player"]]
+disable_mode = 1
+
+[node name="MainCharacterMovement" type="Node2D" parent="." node_paths=PackedStringArray("character", "main_animation", "effect_animation_sword", "audio_player")]
+script = ExtResource("7_fm4k8")
+character = NodePath("..")
+main_animation = NodePath("../Animation")
+effect_animation_sword = NodePath("../EffectsSword")
+audio_player = NodePath("../AudioStreamPlayer2D")
+
+[node name="MainCharacterCollision" type="Node2D" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("57_7h47x")
+character = NodePath("..")
+
+[node name="MainCharacterBomb" type="Node2D" parent="."]
+script = ExtResource("3_odvu6")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -8.54287)
+scale = Vector2(0.0862069, 0.0749756)
+sprite_frames = SubResource("SpriteFrames_sohxe")
+animation = &"idle_with_sword"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -7.5)
+shape = SubResource("RectangleShape2D_q04ya")
+
+[node name="EffectsSword" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(11, -7)
+scale = Vector2(0.526316, 0.918919)
+sprite_frames = SubResource("SpriteFrames_isfec")
+animation = &"attack_2_effect"
+
+[node name="AreaSword" type="Area2D" parent="." groups=["hit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSword"]
+position = Vector2(11, -7.75)
+shape = SubResource("RectangleShape2D_841yf")
+disabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"Effects"
+
+[connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
+[connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="MainCharacterMovement" method="_on_audio_stream_player_2d_finished"]

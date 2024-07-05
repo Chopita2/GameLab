@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5kc5qmx80qxn"
+path="res://.godot/imported/07 - Rotten Flesh Boulevard.ogg-f65b1e9827c299399ad1b3f8ee8fdc1d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Apocalypse Sounds/07 - Rotten Flesh Boulevard.ogg"
+dest_files=["res://.godot/imported/07 - Rotten Flesh Boulevard.ogg-f65b1e9827c299399ad1b3f8ee8fdc1d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
